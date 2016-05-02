@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <title>Chrome-extension-github-packages by eoko</title>
+
+    <!-- bower:css -->
+    <!-- bower installed css files will go here... -->
+    <!-- endinject -->
+    <!-- inject:css -->
+    <!-- built css files will go here... -->
+    <!-- endinject -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <section class="slides">
+        <section>
+            <h1>Créer une extension Chrome</h1>
+
+            <h3>Parceque Github c'est pas parfait...</h3>
+
+            <aside class="notes">
+                <h2>Qui suis-je?</h2>
+                <pre>
+                    Cela risque d'en choquer quelques un mais je suis développeur et entrepreneur \o/. Bien sûr, mes amis sont persuadés
+                    que je suis un g33k et d'autre pense que je suis un nerd. Au détour des définitons, on pourrait se perde alors
+                    pour vous résumer ma situation... je suis simplement passionné.
+
+                    Pour mieux me connaître, vous pouvez lire ma page Wikipedia qui n'existe pas mais comme je vous sent un peu fébrile,
+                    voici quelques facts à propos de ma personne.
+
+                    0. 2 facts
+
+                    - Être développeur, hélas, pour moi, n'a pas été un choix car cette passion à eu le culot de s'imposer d'elle même. Soyer
+                    tout de même rassurer, depuis que je suis sous cafféine, "~je vais bien mieux~".
+
+                    - Être entrepreneur fait souvent rêver, mais je ne sais pas si c'est la caffeine ou l'enthousiasme qui me garde éveillé.
+                    Peut-être un peu des deux, peut-être également à cause des deadlines... va savoir.
+
+                    1. Je suis déjà tombé amoureux
+
+                    On ment toujours un peu sur son premier amour et je ne vous dirais donc pas que c'était ma TI-89 en ASM. Je dirais
+                    plutôt que c'est PHP qui m'a accompagné dans ma première prestations il y a plus de 12 ans et qui m'accompagne toujours.
+
+                    2. J'ai raté l'âme soeur
+
+                    Le JS, ça a d'abord été pour moi une solution simple pour faire des calculs dans le navigateur et rajouter un peu
+                    de CSS, d'HTML et de contenu distant à la volé. Et puis j'ai découvert que finalement une histoire incroyable était possible.
+                    Depuis, je lui court après afin de rattraper le temps perdu.
+
+                    J'y crois toujours.
+
+                    3. Je suis timide
+
+                    J'ai eu la chance d'être propulser VP com' dans une association étudiante sans postuler au poste, les gens croyais
+                    en mes affiches et sans doute en mes idées. Après moulte formation de communication, j'ai fini par acquérir les codes
+                    d'échanges entre individu. Donc maintenant, je parle, je parle, je parle... et j'ai encore pleins de choses à raconter.
+
+                    Ce qu'il faut retenir c'est que contrairement à ce qu'on pourrait croire, lorsque je donne une formation, que j'échange
+                    sur un sujet, que je fais une conférence... je préfère un échange bien court afin d'éviter de passer de longues heures
+                    à potasser sur le trône. #GOT
+
+                    4. Je suis Opensourced
+
+                    Dans l'informatique, je ne crois pas au copyright, ni à tout type de propriété intellectuelle. Ce qui fait la force d'une solutions,
+                    d'un concept, d'un algorithme ou, d'une ligne de code, c'est ce qu'on en fait mais c'est surtout les Hommes qui sont derrières et qui continueront
+                    à améliorer, développer et créer de nouvelles choses formidables.
+
+                    5. Je suis anxieux
+
+                    #fake. Mon seul soucis, satisfaire la confiance que l'on me donne... le reste, ben ça peut attendre que je finisse mon petit dej'.
+
+                    6. Je mange du repository au petit dej'
+
+                    Certaines personnes lisent les news, moi c'est `Github > explorer` au petit dej'. Toujours à la recherche de concept que je ne connais
+                    pas... ce qui fait que Wikipedia est souvent mon complément alimentaire.
+
+                    7. J'aime partager
+
+                    Je pense connaître mes orientations sexuelles, c'est donc dans un sens moins charnel qu'il faut prendre cet amour.
+
+                    Mais dans un sens plus prosaic, pour moi le partage est la base de toute vie en commnauté. C'est pour cela que
+                    je ne pourrais m'empêcher de faire part de mon expérience, de confronter mes idées aux votres...
+                    ce ne sera pas pour douter de vous, mais pour nous enrichir.
+
+                    7.bis. Il n'y a pas de vérité
+
+                    Notre monde n'est pas bicolore mais plutôt 48 bits. Je vous laisse imaginer quantité de nuance que l'on peut apporter à un
+                    simple point de vue et c'est ce qui le rend exceptionnel. Une raison de plus pour le partager!
+
+                    8. Parfois c'est dûr
+
+                    J'aime le genre humain et je crois en lui. J'essaye de toujours prendre du recule afin de comprendre comment on a
+                    pu écrire `if( a === a ) then do something!` (quote tiré du Core prestashop que j'ai eu la malchance de rencontrer).
+
+                    "Parfois, je pleure tout seule." :'(
+
+                    9. Je ne suis pas seul
+
+                    Même si vous trouverez également mon profil sur Tinder, je partage ma vie depuis 12 ans avec une très jolie demoiselle
+                    qui m'accompagne dans tout ce que j'entreprend. Mais si Eoko existe, ce n'est pas grâce à moi mais bien grâce à nous.
+
+                    (et également grace à Éric Ortega qui nous a aider à initier le projet).
+
+                    10. Partouse
+
+                    J'arrive souvent à improviser un dinner au chandelle... mais il faut quand même l'avouer, je parle développement, je parle graphisme
+                    et je parle Eoko tout le temps. Cela commence dès le réveil, cela fini au lit... ce n'est pas toujours simple.
+                </pre>
+
+                <h1>Pourquoi est-ce que vous êtes assis à m'écouter?</h1>
+                <pre>Tout d'abords pour passer du bon temps. Alors si je deviens chiant, n'hésitez pas à faire une petite sieste car cela se consomme
+                sans modération.
+
+                    Si j'arrive à vous garder éveiller, nous discuterons d'extension Chrome et nous verrons par l'exemple comment en créer une proprement.
+
+                    30 minutes c'est court (mais aussi suffisant #notBoring). Alors voici les objectifs ambitieux de cette présentation :
+
+                        - Présentation Générale des extensions Chromes
+                        - Description d'une structure d'extension
+                        - Explication par l'exemple à l'aide d'un projet sur Github
+                        - Automatisation du build de notre extension
+                        - Création de version sur Github et Déploiement automatique sur le Chrome Webstore
+
+                </pre>
+            </aside>
+        </section>
+
+        <section>
+            <section>
+                <h2>Qui suis-je ?</h2>
+                <ul>
+                    <li>Romain DARY</li>
+                    <li>Développeur / Lead Technique / Entrepreneur @eoko</li>
+                    <li>Vous pouvez me retrouver
+                        <ul>
+                            <li>par email : <b>romain.dary@eoko.fr</b></li>
+                            <li>sur twitter (parfois) : <b>@iam_merlin</b></li>
+                            <li>sur github : <b>iam-merlin</b> ou <b>eoko</b></li>
+                        </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Newbie time!</h2>
+                <em>
+                    "Une extension, c'est le truc dans ton navigateur Chrome qui te sauve la vie,
+                    te la simplifie ou te la pourrit."
+                </em>
+            </section>
+            <section>
+                <h3>Une extension Chrome peut...</h3>
+                <ul>
+                    <li>Enrichir l'interface du navigateur</li>
+                    <li>Ajouter du contenu dans les pages web</li>
+                    <li>Tourner en tâche de fond</li>
+                    <li>Améliorer des pages Chrome</li>
+                    <li>Ajouter des raccourcis claviers</li>
+                    <li>Bloquer des requêtes</li>
+                    <li>...</li>
+                </ul>
+            </section>
+            <section data-background="/img/dishwasher.gif">
+                <h2>
+                    <em>Et il fait la vaisselle!</em>
+                </h2>
+                <h5>Enfin presque... ok next</h5>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Quelques Exemples</h2>
+            </section>
+            <section>
+                <h2>AdBlock</h2>
+
+                <p>#P0rn Killer</p>
+                <ul>
+                    <li>Nettoie ta page de toute publicité</li>
+                    <li>Filtre les requêtes</li>
+                    <li>Affiche des statistiques</li>
+                    <li>Permet de controller l'activité de l'extension</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Muzli</h2>
+
+                <p>Le bol de céréales</p>
+                <ul>
+                    <li>Notifie quand il y a de nouvelles suggestions</li>
+                    <li>Modifie la page "new_tab" de Chrome</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Thiveo</h2>
+                <p>Une application professionelle</p>
+                <ul>
+                    <li>Récupère des profils Linkedin</li>
+                    <li>Synchronise les données avec un serveur</li>
+                </ul>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h3>Anatomie d'une extension</h3>
+            </section>
+            <section>
+                <ul>
+                    <li>Un fichier de configuration `manifest.json`</li>
+                    <li>Des fichiers `html`</li>
+                    <li>De la Magie `js`</li>
+                    <li>Et du style `css`</li>
+                </ul>
+                <p><em>... en résumé, on retrouve dans une extension la boîte à outils du développeur Web</em></p>
+            </section>
+            <section>
+                <h2>Manifest.json</h2>
+                <h3>Toute extension Chrome a un manifest</h3>
+                <ul>
+                    <li>Web App Manifest : <a href="https://w3c.github.io/manifest/" target="_blank">W3C Working Draft</a></li>
+                    <li>Google Developer : <a href="https://developer.chrome.com/extensions/manifest" target="_blank">Manifest File Format</a></li>
+                </ul>
+            </section>
+            <section>
+                <img width="640" src="img/webextension-anatomy.svg">
+            </section>
+            <section>
+                <h4>Le manifest permet de définir l'interaction du code de votre extension avec Chrome</h4>
+                <ul>
+                    <li>Browser Action</li>
+                    <li>Page Action</li>
+                    <li>Popup</li>
+                    <li>Background</li>
+                    <li>Content-Script</li>
+                    <li>Option</li>
+                </ul>
+                <br/>
+                <br/>
+                <img src="img/omnibox.png"/>
+            </section>
+            <section>
+                <h4>Chrome se charge de la sécurité</h4>
+                <p>Ex: Il est impossible qu'un lien sur un site web ouvre votre application</p>
+                <i>chrome-extension://apekdlngipnjcahnnimkkadmeaiaehng/options.html</i>
+                <p><em>Après faut pas pousser mémé dans les orties</em></p>
+            </section>
+        </section>
+        <section>
+            <section data-background="/img/concrete-jungle.gif">
+                <h1>Rentrons dans le concret*</h1>
+            </section>
+            <section>
+                <a href="https://github.com/eoko/Github-Extension" target="_blank">https://github.com/eoko/Github-Extension</a>
+            </section>
+            <section>
+                <h3>Chrome Storage</h3>
+                <h4>Les données peuvent être stockées localement</h4>
+                <pre>
+chrome.storage.local.set({'value': theValue}, function() {
+    message('Settings saved');
+});
+                </pre>
+                <h4>Les données peuvent être partagées</h4>
+                <pre>
+chrome.storage.sync.set({'value': theValue}, function() {
+    message('Settings saved');
+});
+                </pre>
+            </section>
+            <section>
+                <h3>Chrome Message</h3>
+                <p>La discussion se fait essentiellement par le biais de messages</p>
+                <h4>Envoi d'un message</h4>
+                <pre>
+chrome.runtime.sendMessage(msg);
+                </pre>
+                <h4>Écoute des messages</h4>
+                <pre>
+chrome.runtime.onMessage.addListener(function (msg) {
+    console.log(msg)
+});
+                </pre>
+                <h4>Envoi d'un message à un onglet ouvert</h4>
+                <pre>
+chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, msg);
+});
+                </pre>
+            </section>
+            <section>
+                <h3>Modifier un badge</h3>
+                <pre>
+chrome.browserAction.setBadgeText(string)
+                </pre>
+            </section>
+        </section>
+        <section>
+            <section data-background="/img/industrialize.gif">
+                <h1>Industrialiser</h1>
+                <h1>Avec Travis</h1>
+            </section>
+            <section>
+                <h3>Packager l'application</h3>
+                <h4>Pas de bras, pas de chocolat</h4>
+            </section>
+            <section>
+                <h3>Avec Chrome</h3>
+                <img src="/img/chrome-add-extension.png">
+            </section>
+            <section>
+                <h3>Avec <a href="https://github.com/oncletom/crx">oncletom</a></h3>
+                <pre>
+$ npm install crx -g
+$ crx pack dist -o myextension.crx
+$ crx pack dist -o myextension.crx -p privateKey.pem
+                </pre>
+            </section>
+            <section>
+                <h3>Créer des versions Github avec Travis</h3>
+                <pre>
+language: node_js
+node_js:
+- '5'
+env:
+- CXX=g++-4.8
+before_script:
+- npm install -g bower
+- npm install -g gulp
+- npm install -g crx
+- npm install
+- bower install
+
+before_deploy:
+- export RELEASE_PKG_FILE="${TRAVIS_BRANCH}.crx"
+- "./node_modules/gulp/bin/gulp.js build"
+- crx pack dist -o ${RELEASE_PKG_FILE}
+- tar -zcvf ${RELEASE_PKG_FILE}.tar.gz dist
+- echo "deploying ${RELEASE_PKG_FILE} to GitHub releases"
+
+deploy:
+  provider: releases
+  api_key:
+    secure: GjCZYTUy2rqmw9CneH1CDwaRWCEIha6oHob+YAM3lb0rvuV9/OtHYYH4D4qFlUX0hT2gEVwV3MBgSra4Tt90930n96W1rMnAwB/Un0uRNUevxjbCiPiuw1c4TCR0OpfBNde2yY7tqVzZBccNElJVIm4/TJ7DnxrNOZJQqjZmOyRy3GPd6U7m0mvDELid9hRbhVDPEjq3yvFcTq+8X6mNAXW6RvTKPUbNOuFbJ0CpMREGi1y7QSlxJXy9yCSZYMatHRrOsk38ZjmYzYTsHsU86PrEqiKoB+Se7WTRL3H3hkGhubJlH7cw6LF6LSfI5lt+STnaI02V39EO1ilnmi7vc08J95cDwgy4n2ww9W3iAtgqADVpsTy0VKIQwEBKqDxjDWd/ZtIFWxNXVDi3k7A5e/RLakr6Urj/oGDcvEDjYewQ4Eja9bNqFT19gWu1yUc6qr2B7HINhdkdApDuBdctpGxou2PnJZ/Dvbx61RbH1xBtVRaUVbmqU3jTzp2R9DtaF6tfr+W8i9JNb9ikspGzJW51iZXW12bTLM89XpRKpapPyqNNuaT8BaWWnJ8PRBTHjLJav/b/ptvTWlbNAUJXKJbNOeQN+kXosdhRy/UgerLSNzku6Lpney+f180BUxr3/cPGmTxLkp0vV67z2QnrRcWd3k6+W1uEbs3pjhKJcQw=
+  file:
+    - "${RELEASE_PKG_FILE}"
+    - "${RELEASE_PKG_FILE}.tar.gz"
+  on:
+    repo: eoko/Github-Extension
+    tags: true
+                </pre>
+            </section>
+        </section>
+
+        <section>
+            <section data-background="/img/yoman.gif">
+                <h1>Quickstart a project</h1>
+                <h4>Yo man!</h4>
+            </section>
+            <section>
+                <h3>Création d'un nouveau projet</h3>
+                <h4>Avec Yeoman & <a href="https://github.com/yeoman/generator-chrome-extension">generator-chrome-extension</a>
+                </h4>
+                <br/>
+                <pre>
+# On s'assure qu'on a ce qu'il faut dans le ventre
+$ npm install --global yo gulp bower
+
+# On installe le générateur
+$ npm install -g generator-chrome-extension
+
+# On crée le répertoire du projet
+$ mkdir my-new-chrome-extension && cd $_
+
+# On génère notre projet
+$ yo chrome-extension --no-babel --sass
+
+# On Développe !
+$ gulp watch
+
+# On Build notre extension
+$ gulp build
+                </pre>
+            </section>
+            <section>
+                <h2>gulp watch</h2>
+            </section>
+            <section data-background="/img/awesome.gif">
+                <h2>Ce projet est "awesome"!</h2>
+            </section>
+            <section>
+                <h4>14 lignes de code</h4>
+                <pre>
+var LIVERELOAD_HOST = 'localhost:';
+var LIVERELOAD_PORT = 35729;
+var connection = new WebSocket('ws://' + LIVERELOAD_HOST + LIVERELOAD_PORT + '/livereload');
+
+connection.onerror = function (error) {
+  console.log('reload connection got error:', error);
+};
+
+connection.onmessage = function (e) {
+  if (e.data) {
+    var data = JSON.parse(e.data);
+    if (data && data.command === 'reload') {
+      chrome.runtime.reload();
+    }
+  }
+};
+                </pre>
+                <h4>Ou vous pouvez copier/coller cela dans votre projet</h4>
+
+                <p>Ou intégrer `chrome.runtime.reload()`<br/>dans votre processus de build !</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h1>Conclusion</h1>
+                <h4>Les extensions sont</h4>
+                <ul>
+                    <li>Simples</li>
+                    <li>Riches en possibilités</li>
+                    <li>Designé pour les webdevelopers</li>
+                </ul>
+            </section>
+            <section data-background="/img/seeu.gif">
+                <h1>Merci :)</h1>
+            </section>
+            <section>
+                <h3>Pour finir un peu de pub..</h3>
+                <h4>on recherche 2 développeurs @eoko</h4>
+                <ul>
+                    <li>Lead Développeur PHP/JS</li>
+                    <li>Développeur PHP/JS fullstack</li>
+                </ul>
+                <br/>
+                <br/>
+                <a href="https://remixjobs.com/emploi/Developpeur-PHP-JS-confirme-H-F-/35583" target="_blank">Ça ce passe par ici</a>
+        </section>
+        </section>
+<!-- bower:js -->
+<!-- bower installed scripts will go here... -->
+<!-- endinject -->
+<!-- inject:js -->
+<!-- app scripts will go here... -->
+<!-- endinject -->
+</body>
+</html>
